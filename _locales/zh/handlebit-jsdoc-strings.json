@@ -1,0 +1,12 @@
+{
+	"handlebit.handlebitInit":"Handlebit板初始化，请在开机时执行",
+	"handlebit.setServo":"设置舵机角度，角度范围0~180",
+	"handlebit.setPixelRGB":"设置彩灯颜色",
+	"handlebit.clearLight":"清除彩灯颜色，关闭彩灯",
+	"handlebit.adjustWhite":"颜色传感器校正白色，每次开机第一次使用颜色传感器都必须先校正白色",
+	"handlebit.adjustBlack":"颜色传感器校正黑色，每次开机第一次使用颜色传感器都必须先校正白色，然后校正黑色",
+	"handlebit.checkCurrentColor":"颜色传感器获取颜色值，必须先校正白色和黑色方可执行",
+	"handlebit.littleStarMelody":"小星星旋律",
+	"handlebit.onHandleButtonPressed":"侦测按键手柄按下状态",
+	"handlebit.getHandleSensorValue":"返回手柄传感器值"
+}

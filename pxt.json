@@ -1,0 +1,21 @@
+{
+    "name": "handlebit",
+    "version": "0.0.1",
+    "description": "Extension for LewanSoul handlebit",
+    "license": "MIT",
+    "dependencies": {
+        "core": "*"
+    },
+    "files": [
+        "README.md",
+        "main.ts",
+        "RGBLight.ts",
+        "sendbuffer.asm",
+        "_locales/zh/handlebit-strings.json",
+        "_locales/zh/handlebit-jsdoc-strings.json"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "public": true
+}
