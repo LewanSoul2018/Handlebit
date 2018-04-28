@@ -9,7 +9,7 @@
     "files": [
         "README.md",
         "main.ts",
-        "RGBLight.ts",
+        "HandleRGBLight.ts",
         "sendbuffer.asm",
         "_locales/zh/handlebit-strings.json",
         "_locales/zh/handlebit-jsdoc-strings.json"
