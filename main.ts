@@ -53,7 +53,7 @@ namespace handlebit {
     }
 
 
-    let lhRGBLight: RGBLight.LHRGBLight;
+    let lhRGBLight: HandleRGBLight.LHRGBLight;
 	let R_F: number;
 	let r_f: number;
 	
@@ -117,7 +117,7 @@ namespace handlebit {
 	 */
 	function initRGBLight() {
 		if (!lhRGBLight) {
-			lhRGBLight = RGBLight.create(DigitalPin.P15, 1, RGBPixelMode.RGB);
+			lhRGBLight = HandleRGBLight.create(DigitalPin.P15, 1, HandleRGBPixelMode.RGB);
 		}
     }
     
@@ -125,7 +125,7 @@ namespace handlebit {
      * Set the color of the colored lights.
      */
     //% weight=96 blockId=setLightColor block="Set light color to %rgb"
-    export function setPixelRGB(rgb: RGBColors)
+    export function setPixelRGB(rgb: HandleRGBColors)
     {
         lhRGBLight.setPixelColor(0, rgb);
         lhRGBLight.show();

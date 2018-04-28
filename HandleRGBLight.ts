@@ -1,8 +1,8 @@
 /**
- * RGBLight package
+ * HandleRGBLight package
  */
 
-enum RGBColors {
+enum HandleRGBColors {
     //% block=red
     Red = 1,
     //% block=orange
@@ -26,7 +26,7 @@ enum RGBColors {
 /**
  * Different modes for RGB or RGB+W RGBLight LHRGBLight
  */
-enum RGBPixelMode {
+enum HandleRGBPixelMode {
     //% block="RGB (GRB format)"
     RGB = 0,
     //% block="RGB+W"
@@ -38,7 +38,7 @@ enum RGBPixelMode {
 /**
  * RGBLight Functions
  */
-namespace RGBLight {
+namespace HandleRGBLight {
     //% shim=sendBufferAsm
     //% parts="RGBLight"
     function sendBuffer(buf: Buffer, pin: DigitalPin) {
@@ -55,7 +55,7 @@ namespace RGBLight {
         brightness: number;
         start: number; // start offset in LED strip
         _length: number; // number of LEDs
-        _mode: RGBPixelMode;
+        _mode: HandleRGBPixelMode;
 
         setBrightness(brightness: number): void {
             this.brightness = brightness & 0xff;
@@ -67,55 +67,55 @@ namespace RGBLight {
             // don't yield to avoid races on initialization
         }
 
-        setPixelColor(pixeloffset: number, rgb: RGBColors): void {
+        setPixelColor(pixeloffset: number, rgb: HandleRGBColors): void {
             this.setPixelRGB(pixeloffset, rgb);
         }
 
-        private setPixelRGB(pixeloffset: number, rgb: RGBColors): void {
+        private setPixelRGB(pixeloffset: number, rgb: HandleRGBColors): void {
             if (pixeloffset < 0
                 || pixeloffset >= this._length)
                 return;
             let tureRgb = 0;
             switch (rgb)
             {
-                case RGBColors.Red:
+                case HandleRGBColors.Red:
                     tureRgb = 0xFF0000;
                     break;    
 
-                case RGBColors.Orange:
+                case HandleRGBColors.Orange:
                     tureRgb = 0xFFA500;    
                     break;    
 
-                case RGBColors.Yellow:
+                case HandleRGBColors.Yellow:
                     tureRgb = 0xFFFF00;
                     break;    
                     
-                case RGBColors.Green:
+                case HandleRGBColors.Green:
                     tureRgb = 0x00FF00;    
                     break;    
 
-                    case RGBColors.Blue:
+                    case HandleRGBColors.Blue:
                     tureRgb = 0x0000FF;
                     break;    
                     
-                case RGBColors.Indigo:
+                case HandleRGBColors.Indigo:
                     tureRgb = 0x4b0082;    
                     break;    
 
-                case RGBColors.Violet:
+                case HandleRGBColors.Violet:
                     tureRgb = 0x8a2be2;
                     break;    
                     
-                case RGBColors.Purple:
+                case HandleRGBColors.Purple:
                     tureRgb = 0xFF00FF;    
                     break;   
 
-                case RGBColors.White:
+                case HandleRGBColors.White:
                     tureRgb = 0xFFFFFF;    
                     break;   
             }
 
-            let stride = this._mode === RGBPixelMode.RGBW ? 4 : 3;
+            let stride = this._mode === HandleRGBPixelMode.RGBW ? 4 : 3;
             pixeloffset = (pixeloffset + this.start) * stride;
 
             let red = unpackR(tureRgb);
@@ -132,7 +132,7 @@ namespace RGBLight {
         }
 
         private setBufferRGB(offset: number, red: number, green: number, blue: number): void {
-            if (this._mode === RGBPixelMode.RGB_RGB) {
+            if (this._mode === HandleRGBPixelMode.RGB_RGB) {
                 this.buf[offset + 0] = red;
                 this.buf[offset + 1] = green;
             } else {
@@ -147,14 +147,14 @@ namespace RGBLight {
         }
 
         clear(): void {
-            const stride = this._mode === RGBPixelMode.RGBW ? 4 : 3;
+            const stride = this._mode === HandleRGBPixelMode.RGBW ? 4 : 3;
             this.buf.fill(0, this.start * stride, this._length * stride);
             this.show();
         }
     }
-    export function create(pin: DigitalPin, numleds: number, mode: RGBPixelMode): LHRGBLight {
+    export function create(pin: DigitalPin, numleds: number, mode: HandleRGBPixelMode): LHRGBLight {
         let light = new LHRGBLight();
-        let stride = mode === RGBPixelMode.RGBW ? 4 : 3;
+        let stride = mode === HandleRGBPixelMode.RGBW ? 4 : 3;
         light.buf = pins.createBuffer(numleds * stride);
         light.start = 0;
         light._length = numleds;
