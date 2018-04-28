@@ -124,7 +124,7 @@ namespace handlebit {
     /**
      * Set the color of the colored lights.
      */
-    //% weight=96 blockId=setLightColor block="Set light color to %rgb"
+    //% weight=96 blockId=setPixelRGB block="Set light color to %rgb"
     export function setPixelRGB(rgb: HandleRGBColors)
     {
         lhRGBLight.setPixelColor(0, rgb);
@@ -133,7 +133,7 @@ namespace handlebit {
     /**
      * Set RGB Color argument
      */
-    //% weight=94 blockId=setLightColorArgs block="Set light color to %rgb,range from 1 to 9"
+    //% weight=94 blockId=setPixelRGBArgs block="Set light color to %rgb,range from 1 to 9"
     //% rgb.min=1 rgb.max=9
     export function setPixelRGBArgs(rgb: number)
     {
@@ -455,7 +455,7 @@ namespace handlebit {
 	/**
 	 *  Color sensor to obtain color value, white and black must be corrected before execution.
 	 */
-	//% weight=86 blockGap=50 blockId=checkColor block="Current color %color"
+	//% weight=86 blockGap=50 blockId=checkCurrentColor block="Current color %color"
 	export function checkCurrentColor(color: Colors): boolean {
 		let r = readRedLight();
 		let g = readGreenLight();
