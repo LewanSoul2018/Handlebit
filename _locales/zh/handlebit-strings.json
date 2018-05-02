@@ -1,6 +1,6 @@
 {
 	"handlebit.handlebitInit|block": "初始化Handlebit",
-	"handlebit.setServo|block": "设置舵机角度|%angle|运行时间|%duration|",
+	"handlebit.setServoPosition|block": "设置舵机角度|%angle|运行时间|%duration|",
 	"handlebit.setPixelRGB|block":"设置彩灯颜色为|%rgb|",
 	"handlebit.setMotorSpeed|block":"设置马达速度|%speed",
 	"handlebit.setPixelRGBArgs|block":"设置彩灯颜色为|%rgb|",

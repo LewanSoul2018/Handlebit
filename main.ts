@@ -100,9 +100,9 @@ namespace handlebit {
 /**
 * Set the angle of the servo, range from 0 to 180 degree
 */
-//% weight=98 blockId=setServo block="Set servo|angle %angle|duration %duration"
+//% weight=98 blockId=setServoPosition block="Set servo|angle %angle|duration %duration"
 //% angle.min=0 angle.max=180
-    export function setServo(angle: number, duration: number) {
+    export function setServoPosition(angle: number, duration: number) {
         if (angle > 180 || angle < 0)
         {
             return; 

@@ -1,6 +1,6 @@
 {
 	"handlebit.handlebitInit":"Handlebit板初始化，请在开机时执行",
-	"handlebit.setServo":"设置舵机角度,角度范围0~180",
+	"handlebit.setServoPosition":"设置舵机角度,角度范围0~180",
 	"handlebit.setPixelRGB":"设置彩灯颜色",
 	"handlebit.setPixelRGBArgs":"设置彩灯颜色，输入索引，范围1到9",
 	"handlebit.clearLight":"清除彩灯颜色，关闭彩灯",
