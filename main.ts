@@ -61,7 +61,18 @@ namespace handlebit {
 	let G_F: number;
 
 	let b_f: number;
-	let B_F: number;
+    let B_F: number;
+
+    let Sound: number = -1;
+    let Light: number = -1;
+    let Power: number = -1;
+    let JoystickX1: number = -1;
+    let JoystickX2: number = -1;
+    let JoystickY1: number = -1;
+    let JoystickY2: number = -1;
+    let UltrasonicValue: number = -1;
+    let Knob: number = -1;
+    let handleCmd: string = "";
 
 /**
    * Handlebit board initialization, please execute at boot time
@@ -83,7 +94,14 @@ namespace handlebit {
     serial.writeBuffer(buf);
     basic.forever(() => {
       getHandleCmd();
-  });	  
+      });	  
+      while (1)
+      {
+          if (Sound != -1 && Light != -1 && Power != -1 && JoystickX1 != -1 && JoystickX2 != -1 && JoystickY1 != -1 && JoystickY2 != -1 && UltrasonicValue != -1 && Knob != -1)
+          {
+              break;
+          }    
+      }    
 }
 
 /**
@@ -526,16 +544,6 @@ namespace handlebit {
     }
      
 
-    let Sound: number = 0;
-    let Light: number = 0;
-    let Power: number = 0;
-    let JoystickX1: number = 0;
-    let JoystickX2: number = 0;
-    let JoystickY1: number = 0;
-    let JoystickY2: number = 0;
-    let UltrasonicValue: number = 0;
-    let Knob: number = 0;
-    let handleCmd: string = "";
     /**
      * Get the handle command.
      */
