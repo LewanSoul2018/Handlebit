@@ -95,7 +95,7 @@ namespace handlebit {
     basic.forever(() => {
       getHandleCmd();
       });
-    control.waitMicros(300);
+    control.waitMicros(10000);
 }
 
 /**
