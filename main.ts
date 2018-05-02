@@ -122,7 +122,25 @@ namespace handlebit {
 	   buf[9] = (position >> 8) & 0xff;
 	   serial.writeBuffer(buf);
 }
-	
+    
+/**
+*	Set the speed of motor, range from -100 to 100.
+*/
+//% weight=97  blockId=setMotorSpeed block="Set motor speed|%speed"
+//% speed.min=-100 speed.max=100
+    export function setMotorSpeed(speed: number) {
+        if (speed > 100 || speed < -100) {
+        return;
+        }
+        speed = speed * -1;
+    let buf = pins.createBuffer(5);
+    buf[0] = 0x55;
+    buf[1] = 0x55;
+    buf[2] = 0x03;
+    buf[3] = 0x32;//cmd type
+    buf[4] = speed;
+    serial.writeBuffer(buf);
+}    
     /**
 	 * Initialize RGB
 	 */

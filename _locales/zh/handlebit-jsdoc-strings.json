@@ -9,5 +9,6 @@
 	"handlebit.checkCurrentColor":"颜色传感器获取颜色值，必须先校正白色和黑色方可执行",
 	"handlebit.littleStarMelody":"小星星旋律",
 	"handlebit.onHandleButtonPressed":"侦测按键手柄按下状态",
-	"handlebit.getHandleSensorValue":"返回手柄传感器值"
+	"handlebit.getHandleSensorValue":"返回手柄传感器值",
+	"handlebit.setMotorSpeed":"控制马达正反转和速度"
 }
