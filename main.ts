@@ -94,14 +94,8 @@ namespace handlebit {
     serial.writeBuffer(buf);
     basic.forever(() => {
       getHandleCmd();
-      });	  
-      while (1)
-      {
-          if (Sound != -1 && Light != -1 && Power != -1 && JoystickX1 != -1 && JoystickX2 != -1 && JoystickY1 != -1 && JoystickY2 != -1 && UltrasonicValue != -1 && Knob != -1)
-          {
-              break;
-          }    
-      }    
+      });
+    control.waitMicros(300);
 }
 
 /**
