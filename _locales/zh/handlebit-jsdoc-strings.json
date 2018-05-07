@@ -10,5 +10,6 @@
 	"handlebit.littleStarMelody":"小星星旋律",
 	"handlebit.onHandleButtonPressed":"侦测按键手柄按下状态",
 	"handlebit.getHandleSensorValue":"返回手柄传感器值",
-	"handlebit.setMotorSpeed":"控制马达正反转和速度"
+	"handlebit.setMotorSpeed":"控制马达正反转和速度",
+	"handlebit.setLedBrightness":"设置灯光亮度"
 }
