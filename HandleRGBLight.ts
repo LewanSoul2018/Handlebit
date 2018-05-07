@@ -152,7 +152,27 @@ namespace HandleRGBLight {
             this.buf.fill(0, this.start * stride, this._length * stride);
             this.show();
         }
+
+     function easeBrightness(): void {
+            const stride = this._mode === HandleRGBPixelMode.RGBW ? 4 : 3;
+            const br = this.brightness;
+            const buf = this.buf;
+            const end = this.start + this._length;
+            const mid = this._length / 2;
+            for (let i = this.start; i < end; ++i) {
+                const k = i - this.start;
+                const ledoffset = i * stride;
+                const br = k > mid ? 255 * (this._length - 1 - k) * (this._length - 1 - k) / (mid * mid) : 255 * k * k / (mid * mid);
+                const r = (buf[ledoffset + 0] * br) >> 8; buf[ledoffset + 0] = r;
+                const g = (buf[ledoffset + 1] * br) >> 8; buf[ledoffset + 1] = g;
+                const b = (buf[ledoffset + 2] * br) >> 8; buf[ledoffset + 2] = b;
+                if (stride == 4) {
+                    const w = (buf[ledoffset + 3] * br) >> 8; buf[ledoffset + 3] = w;
+                }
+            }
+        }
     }
+    
     export function create(pin: DigitalPin, numleds: number, mode: HandleRGBPixelMode): LHRGBLight {
         let light = new LHRGBLight();
         let stride = mode === HandleRGBPixelMode.RGBW ? 4 : 3;
@@ -180,23 +200,4 @@ namespace HandleRGBLight {
         let b = (rgb) & 0xFF;
         return b;
     }
-
-    function easeBrightness(): void {
-            const stride = this._mode === HandleRGBPixelMode.RGBW ? 4 : 3;
-            const br = this.brightness;
-            const buf = this.buf;
-            const end = this.start + this._length;
-            const mid = this._length / 2;
-            for (let i = this.start; i < end; ++i) {
-                const k = i - this.start;
-                const ledoffset = i * stride;
-                const br = k > mid ? 255 * (this._length - 1 - k) * (this._length - 1 - k) / (mid * mid) : 255 * k * k / (mid * mid);
-                const r = (buf[ledoffset + 0] * br) >> 8; buf[ledoffset + 0] = r;
-                const g = (buf[ledoffset + 1] * br) >> 8; buf[ledoffset + 1] = g;
-                const b = (buf[ledoffset + 2] * br) >> 8; buf[ledoffset + 2] = b;
-                if (stride == 4) {
-                    const w = (buf[ledoffset + 3] * br) >> 8; buf[ledoffset + 3] = w;
-                }
-            }
-        }
 }
