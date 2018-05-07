@@ -169,6 +169,16 @@ namespace handlebit {
         lhRGBLight.setPixelColor(0, rgb);
         lhRGBLight.show();
     }
+    
+    /**
+     * Set RGB Color argument
+     */
+    //% weight=93 blockId=setLedBrightness block="Set light brightness,range from 0 to 255"
+    //% rgb.min=0 rgb.max=255
+    export function setLedBrightness(brightness: number)
+    {
+	lhRGBLight.setBrightness(brightness);
+    }
 
 
     /**
