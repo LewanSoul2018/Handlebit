@@ -38,5 +38,6 @@
 	"handlebit.HandleSensorValue.ULTRASONIC|block":"超声波",
 	"handlebit.HandleSensorValue.KNOB|block":"旋钮",
 	"handlebit.onHandleButtonPressed|block":"当手柄按键|%button|按下",
-	"handlebit.getHandleSensorValue|block":"手柄|%type|传感器值"
+	"handlebit.getHandleSensorValue|block":"手柄|%type|传感器值",
+	"handlebit.setLedBrightness|block":"设置灯光亮度|%brightness|级"
 }
