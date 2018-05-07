@@ -178,6 +178,7 @@ namespace handlebit {
     export function setLedBrightness(brightness: number)
     {
 	lhRGBLight.setBrightness(brightness);
+	lhRGBLight.show();
     }
 
 
