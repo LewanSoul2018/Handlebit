@@ -171,9 +171,9 @@ namespace handlebit {
     }
     
     /**
-     * Set RGB Color argument
+     * Set light brightness,range from 0 to 255
      */
-    //% weight=93 blockId=setLedBrightness block="Set light brightness,range from 0 to 255"
+    //% weight=93 blockId=setLedBrightness block="Set light brightness level|%brightness|"
     //% rgb.min=0 rgb.max=255
     export function setLedBrightness(brightness: number)
     {
