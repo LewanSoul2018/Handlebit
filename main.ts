@@ -169,18 +169,7 @@ namespace handlebit {
         lhRGBLight.setPixelColor(0, rgb);
         lhRGBLight.show();
     }
-    
-    /**
-     * Set light brightness,range from 0 to 255
-     */
-    //% weight=93 blockId=setLedBrightness block="Set light brightness level|%brightness|"
-    //% rgb.min=0 rgb.max=255
-    export function setLedBrightness(brightness: number)
-    {
-	lhRGBLight.setBrightness(brightness);
-	lhRGBLight.show();
-    }
-
+   
 
     /**
      * Clear the color of the colored lights and turn off the lights.
