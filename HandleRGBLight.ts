@@ -153,7 +153,7 @@ namespace HandleRGBLight {
             this.show();
         }
 
-     function easeBrightness(): void {
+        easeBrightness(): void {
             const stride = this._mode === HandleRGBPixelMode.RGBW ? 4 : 3;
             const br = this.brightness;
             const buf = this.buf;
